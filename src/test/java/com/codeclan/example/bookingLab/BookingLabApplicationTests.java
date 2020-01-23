@@ -33,4 +33,6 @@ class BookingLabApplicationTests {
 		List<Course> found = courseRepository.findCoursesByRating(5);
 		assertEquals("Intro to Slack Beef", found.get(0).getName());
 	}
+
+
 }
