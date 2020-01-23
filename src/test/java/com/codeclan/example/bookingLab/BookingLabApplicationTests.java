@@ -1,6 +1,7 @@
 package com.codeclan.example.bookingLab;
 
 import com.codeclan.example.bookingLab.models.Course;
+import com.codeclan.example.bookingLab.models.Customer;
 import com.codeclan.example.bookingLab.repositories.bookingRepositories.BookingRepository;
 import com.codeclan.example.bookingLab.repositories.courseRepositories.CourseRepository;
 import com.codeclan.example.bookingLab.repositories.customerRepositories.CustomerRepository;
@@ -34,5 +35,9 @@ class BookingLabApplicationTests {
 		assertEquals("Intro to Slack Beef", found.get(0).getName());
 	}
 
-
+	@Test
+	public void findCustomersByCourse() {
+		List<Customer> found = customerRepository.findCustomersByBookingsCourseId(1L);
+		assertEquals("Eugene", found.get(0).getName());
+	}
 }
