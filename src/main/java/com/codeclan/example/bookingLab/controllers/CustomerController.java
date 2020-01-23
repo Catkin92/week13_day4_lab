@@ -24,10 +24,14 @@ public class CustomerController {
 
     @GetMapping(value = "/{town}/{id}")
     public List<Customer> findCustomerByGivenTownAndCourse(@PathVariable String town, @PathVariable Long id) {
-        return customerRepository.findCustomerByGivenTownAndCourse(town, id);
+        String townLowerCase = town.toLowerCase();
+        String cap = townLowerCase.substring(0, 1).toUpperCase() + townLowerCase.substring(1);
+        return customerRepository.findCustomerByGivenTownAndCourse(cap, id);
     }
     @GetMapping(value = "/{age}/{town}/{id}")
     public List<Customer> findCustomerOverGivenAgeInGivenTownForGivenCourse(@PathVariable int age, @PathVariable String town, @PathVariable Long id) {
-        return customerRepository.findCustomerOverGivenAgeInGivenTownForGivenCourse(age, town, id);
+        String townLowerCase = town.toLowerCase();
+        String cap = townLowerCase.substring(0, 1).toUpperCase() + townLowerCase.substring(1);
+        return customerRepository.findCustomerOverGivenAgeInGivenTownForGivenCourse(age, cap, id);
     }
 }
