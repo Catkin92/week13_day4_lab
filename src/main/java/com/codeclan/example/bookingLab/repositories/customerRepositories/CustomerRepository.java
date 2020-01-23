@@ -7,7 +7,9 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import java.util.List;
 
 @RepositoryRestResource
-public interface CustomerRepository extends JpaRepository<Customer, Long> {
+public interface CustomerRepository extends JpaRepository<Customer, Long>, CustomerRepositoryCustom {
 
     List<Customer> findCustomersByBookingsCourseId(Long id);
+
+    List<Customer> findCustomerByGivenTownAndCourse(String town, Long id);
 }

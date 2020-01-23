@@ -53,4 +53,11 @@ class BookingLabApplicationTests {
 		List<Booking> found = bookingRepository.findBookingsByDate("23-01-20");
 		assertEquals(1L, found.get(0).getId());
 	}
+
+	@Test
+	public void findCustomerByGivenTownAndCourse() {
+		List<Customer> found = customerRepository.findCustomerByGivenTownAndCourse("York", 1L);
+		assertEquals("Eugene", found.get(0).getName());
+	}
+
 }
