@@ -60,4 +60,10 @@ class BookingLabApplicationTests {
 		assertEquals("Eugene", found.get(0).getName());
 	}
 
+	@Test
+	public void findCustomerOverGivenAgeInGivenTownForGivenCourse() {
+		List<Customer> found = customerRepository.findCustomerOverGivenAgeInGivenTownForGivenCourse(21, "Edinburgh", 2L);
+		assertEquals("Juan", found.get(0).getName());
+	}
+
 }
